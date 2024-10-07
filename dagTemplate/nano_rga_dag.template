@@ -1,0 +1,17 @@
+JOB minimap2 minimap2.submit
+VARS minimap2 RUN="${run}" 
+VARS minimap2 REF= "${ref}"
+
+JOB view samtools.submit
+VARS view RUN="${run}"
+
+JOB bamqc bamqc.submit
+VARS bamqc RUN="${run}"
+
+JOB nanoCaller nanoCaller.submit
+VARS nanoCaller RUN="${run}"
+VARS nanoCaller REF= "${ref}"
+
+JOB vcf-annotator vcf-annotator.submit
+VARS vcf-annotator RUN= "${run}"
+VARS vcf-annotator REF= "${ref}"

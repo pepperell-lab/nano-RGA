@@ -1,0 +1,21 @@
+universe = container
+docker_container = staphb/minimap2
+
+arguments = "$(REF) $(RUN)"
+executable = minimap2.sh
+
+error = minimap2_$(RUN).err
+log = minimap2_$(RUN).log
+
+should_transfer_files = YES
+transfer_executable = TRUE
+when_to_transfer_output = ON_EXIT
+
+transfer_input_files = $(RUN)_1.fq.gz
+
+Requirements = (Target.HasCHTCStaging == true) 
+request_cpus = 8
+request_memory = 50GB
+request_disk = 50GB
+
+queue
