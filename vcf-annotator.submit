@@ -8,10 +8,8 @@ log = vcf-annotator_$(RUN).log
 
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
-transfer_input_files = 
-transfer_output_files = $(RUN).ready.bam, $(RUN)_pilon.vcf, $(RUN)_pilon.fasta
-transfer_output_remaps = "$(RUN).ready.bam = file:///staging/mtopf/Cdiff/$(RUN).ready.bam; $(RUN)_pilon.vcf = file:///staging/mtopf/Cdiff/$(RUN)_pilon.vcf; $(RUN)_pilon.fasta = file:///staging/mtopf/Cdiff/$(RUN)_pilon.fasta"
-
+transfer_input_files = variant_calls.vcf, $(REF)
+ 
 Requirements = (Target.HasCHTCStaging == true)
 request_cpus = 1
 request_memory = 10GB
