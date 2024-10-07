@@ -10,7 +10,7 @@ should_transfer_files = YES
 transfer_executable = TRUE
 when_to_transfer_output = ON_EXIT
 
-transfer_input_files = $(RUN).sort.bam, SB5YTL_1.sort.bam.bai, $(REF)
+transfer_input_files = $(RUN).sort.bam, $(RUN).sort.bam.bai, $(REF)
 
 Requirements = (Target.HasCHTCStaging == true) 
 request_cpus = 1
