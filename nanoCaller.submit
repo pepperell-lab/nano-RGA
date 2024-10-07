@@ -10,7 +10,7 @@ should_transfer_files = YES
 transfer_executable = TRUE
 when_to_transfer_output = ON_EXIT
 
-transfer_input_files = $(RUN).bam, $(REF)
+transfer_input_files = $(RUN).sort.bam, $(REF)
 
 Requirements = (Target.HasCHTCStaging == true) 
 request_cpus = 1

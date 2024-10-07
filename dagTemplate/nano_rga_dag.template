@@ -2,8 +2,8 @@ JOB minimap2 minimap2.submit
 VARS minimap2 RUN="${run}" 
 VARS minimap2 REF= "${ref}"
 
-JOB view samtools.submit
-VARS view RUN="${run}"
+JOB samtools samtools.submit
+VARS samtools RUN="${run}"
 
 JOB bamqc bamqc.submit
 VARS bamqc RUN="${run}"
@@ -15,3 +15,8 @@ VARS nanoCaller REF= "${ref}"
 JOB vcf-annotator vcf-annotator.submit
 VARS vcf-annotator RUN= "${run}"
 VARS vcf-annotator REF= "${ref}"
+
+PARENT minimap2 CHILD samtools
+PARENT samtools CHILD bamqc
+PARENT bamqc CHILD nanoCaller
+PARENT nanoCaller CHILD vcf-annotator

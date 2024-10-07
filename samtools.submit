@@ -3,14 +3,13 @@ docker_image = staphb/samtools
 executable = samtools.sh
 arguments = "$(RUN) $(REF)"
 
-error = samtools_view_$(RUN).err
-log = samtools_view_$(RUN).log
+error = samtools_$(RUN).err
+log = samtools_$(RUN).log
 
 transfer_executable = TRUE
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
-transfer_input_files = $(RUN)_1.sam, $(RUN)_2.sam
-#transfer_output_remaps = "$(RUN).bam = file:///staging/mtopf/Cdiff/$(RUN).bam"
+transfer_input_files = $(RUN).sam, $(REF)
 
 Requirements = (Target.HasCHTCStaging == true)
 request_cpus = 1
