@@ -12,4 +12,4 @@ tar -xf $1_output.tar.gz
 gunzip $1_output/variant_calls.snps.vcf.gz
 cp $_output/variant_calls.snps.vcf .
 
-vcf-annotator variant_calls.vcf $2 > $1_annotated.vcf
+vcf-annotator variant_calls.snps.vcf $2 > $1_annotated.snps.vcf
